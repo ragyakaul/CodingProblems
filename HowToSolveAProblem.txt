@@ -1,0 +1,49 @@
+Q: Given the head of a singly linked list, reverse the list, and return the reversed list.
+
+
+Keep going to linkedlist's next value until you reach the value whose next value is nullptr (The last value in the list).
+Node * curr = head;
+ while (curr->next != nullptr){
+    curr = curr->next
+ }
+
+Phase 1:
+
+"How do I solve the problem in english":
+Base case: 
+When this node points to nullptr,then just return this node
+
+Usual case:
+Each node points to the remainder of the list reversed
+
+
+Phase 2:
+"Break that down further"
+
+ListNode* reverseList(ListNode* head) {
+
+//Base case: 
+When this node points to nullptr,then just return this node
+if (head == nullptr){
+    return head;
+}
+
+//Usual case:
+Each node points to the remainder of the list reversed
+head->next = reverseList(head->next);
+}
+    
+
+Phase 3:
+"Finish the psudocode"
+
+
+Phase 4:
+"Make that into working code"
+
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        
+    }
+};
