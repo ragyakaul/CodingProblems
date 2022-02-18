@@ -47,3 +47,11 @@ public:
         
     }
 };
+
+/* Check edge cases before submitting:
+-> If the input is empty
+-> If there's only 1 element 
+-> In an average case
+-> If the data is in a weird order
+-> Check negative numbers 
+ */
