@@ -1,13 +1,24 @@
 public class Solution {
     public int[] SortedSquares(int[] nums) {
-        // Go through arr and square everything
         int[] newNums = new int[nums.Length];
-        for(int i = 0; i < nums.Length; i++)
+        int left = 0;
+        int right = nums.Length - 1;
+        
+        for(int i = nums.Length - 1; i >= 0; i--)
         {
-            newNums[i] = (int)Math.Pow(nums[i], 2);
+            int square = 0;
+            if(Math.Abs(nums[left]) < Math.Abs(nums[right]))
+            {
+                square = nums[right]; 
+                right--;
+            }
+            else 
+            {
+                square = nums[left];
+                left++;
+            }
+            newNums[i] = square * square;
         }
-        // Sort doubled array
-        Array.Sort(newNums);
         return newNums;
     }
 }
